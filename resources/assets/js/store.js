@@ -8,7 +8,8 @@ export default {
     isLoggedId : !!user,
     loading: false,
     auth_error: null,
-    customers: []
+    customers: [],
+    recipes:[]
   },
   getters: {
     isLoading(state) {
@@ -25,6 +26,9 @@ export default {
     },
     customers(state) {
       return state.customers;
+    },
+    recipes(state) {
+      return state.recipes;
     }
   },
   mutations: {
@@ -65,6 +69,16 @@ export default {
         })
         .then((response) => {
           context.commit('updateCustomers',response.data.customers);
+      });
+    },
+    getrecipes (context) {
+      axios.get('api/recipes', {
+        headers: {
+          "Authorization": `Bearer ${context.state.currrentUser.token}`
+        }
+        })
+        .then((response) => {
+          context.commit('updateRecipes',response.data.recipes);
       });
     }
   }

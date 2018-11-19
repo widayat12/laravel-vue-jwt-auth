@@ -27,3 +27,8 @@ Route::group(['middleware' => 'jwt.auth'], function ($router) {
     Route::post('customers/new', 'CustomerController@new');
 
 });
+
+Route::group(['middleware' => 'jwt.auth'], function ($router) {
+
+    Route::resource('recipe', 'RecipeController');
+});

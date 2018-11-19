@@ -25,22 +25,16 @@
                           </template>
                           <template v-else>
                             <li><router-link to="/" class="nav-link">Home</router-link></li>
-                            <li class="nav-item dropdown">
-                              <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <router-link to="/" class="nav-link dropdown-item">Category</router-link>
-                                <router-link to="/" class="nav-link dropdown-item">Category1</router-link>
-                              </div>
-                            </li>
+                            <li><router-link to="/recipes" class="nav-link"><a>Recepis</a></router-link></li>
                             <li><router-link to="/customers" class="nav-link"><a>Customers</a></router-link></li>
                             <li class="nav-item dropdown">
-                              <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                {{ currrentUser.name }}<span class="caret"></span>
-                              </a>
+                                <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                  {{ currrentUser.name }}<span class="caret"></span>
+                                </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="#" @click.prevent="logout" class="dropdown-item">Logout</a>
                               </div>
-                          </li>
+                            </li>
                           </template>
 
                 </ul>

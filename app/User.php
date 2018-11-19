@@ -34,6 +34,11 @@ class User extends Authenticatable implements JWTSubject
     *
     * @return mixed
     */
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
+    }
+
    public function getJWTIdentifier()
    {
        return $this->getKey();

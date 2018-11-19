@@ -5,6 +5,11 @@ import CustomersLIst from './components/customers/List.vue'
 import CustomersNew from './components/customers/New.vue'
 import Customer from './components/customers/View.vue'
 
+import RecipesMain from './components/recipe/Main.vue'
+import RecipesList from './components/recipe/List.vue'
+import RecipesNew from './components/recipe/New.vue'
+import Recipe from './components/recipe/View.vue'
+
 export const routes = [
   {
     path: '/',
@@ -37,5 +42,12 @@ export const routes = [
         component: Customer
       }
     ]
+  },
+  {
+    path: '/recipes',
+    component: RecipesMain,
+    meta: {
+      requiresAuth: true
+    }
   }
 ];
